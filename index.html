@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+<style>
+    * {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+#main{
+    position: relative;
+    overflow: hidden;
+    background-color: blue;
+}
+@font-face {
+    font-family: a;
+    src: url(./jost-variable.ttf);
+}
+@font-face {
+    font-family: b;
+    src: url(./KFOlCnqEu92Fr1MmEU9fBBc4\ \(1\).ttf);
+}
+@font-face {
+    font-family: c;
+    src: url(./KFOmCnqEu92Fr1Mu4mxK\ \(1\).ttf);
+}
+#page1
+{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+#page1>video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+#page1>nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 30px;
+    position: absolute;
+    height: 10vh;
+    width: 100vw;
+}
+#page1>nav>img{
+    margin-top: -1.7vw;
+    width: 9%;
+}
+#right-nav>button{
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: orange;
+    border: 1px solid #fff;
+    color: #fff;
+    font-family: a;
+    font-size: 15px;
+}
+.bottom-page1{
+    position: absolute;
+    bottom: 5%;
+    height: 35vh;
+    width: 50vw;
+    left: 10%;
+}
+.bottom-page1>h1{
+    font-family: a;
+    font-size: 5vw;
+    font-weight: 100;
+    line-height: 1;
+    color: #fff;
+}
+.bottom-page1-inner{
+    position: absolute;
+    bottom: 0%;
+    height: 35%;
+    width: 100%;
+}
+.bottom-page1-inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: a;
+}
+.bottom-page1-inner>button{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    background-color:orange;
+    color:white;
+    font-size: 16px;
+    font-family: b;
+}
+.bottom-page1-inner>h4{
+    font-size: 1.3vw;
+    font-weight: 100;
+    color: #fff;
+}
+#page2{
+    display: flex;
+    align-items: start;
+    font-family: a;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    padding: 0vw 8vw;
+    color: #fff;
+    background-color: blue;
+}
+#page2>h2{
+    margin-bottom: 3vw;
+    font-weight: 100;
+}
+#page2>h1{
+    font-weight: 100;
+    line-height: 1.3;
+    width: 90%;
+    font-size: 4vw;
+    color: #dadada69;
+}
+
+
+#page3{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+#page3>canvas{
+    max-height: 100vh;
+    max-width: 100vw;
+    position: relative;
+}
+#page4{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color:rgb(39, 39, 160);
+    font-family: a;
+}
+#page4>h3{
+    margin-left: 15vw;
+    margin-bottom: 2vw;
+    font-weight: 100;
+    color: #fff;
+}
+#page4>h1{
+    margin-left: 15vw;
+    width: 70%;
+    font-size: 3vw;
+    font-weight: 100;
+    color: #ffffff81;
+}
+#page5{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+#page5>canvas{
+    position: relative;
+    max-width: 100vw;
+    max-height: 100vh;
+}
+#page6{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: blue;
+    flex-direction: column;
+    font-family: a;
+}
+#page6>h3{
+    margin-left: 15vw;
+    font-weight: 100;
+    color: #fff;
+    margin-bottom: 2vw;
+}
+#page6>h1{
+    margin-left: 15vw;
+    font-size: 3vw;
+    width: 70%;
+    font-weight: 100;
+    color: #ffffff53;
+}
+#page7{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color:blue;
+}
+#page7>canvas{
+    position: relative;
+    max-width: 100vw;
+    max-height: 100vh;
+}
+.page7-cir{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 9;
+    height: 30vw;
+    width: 30vw;
+    border-radius: 50%;
+    border: 1px solid #fff;
+}
+.page7-cir-inner{
+    height: 70%;
+    width: 70%;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid #fff;
+}
+
+#page8{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: blue;
+}
+#page8>video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.page8-bottom{
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-family: a;
+}
+.page8-bottom>h1{
+    color: #fff;
+    margin-bottom: 2vw;
+    font-size: 5vw;
+    font-weight: 100;
+}
+.page8-bottom>button{
+    padding: 20px 30px;
+    border-radius: 50px;
+    border: none;
+    background-color:orange;
+    color: blue;
+}
+#page9{
+    display: flex;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #0a3cce;
+}
+.left9{
+    height: 100%;
+    width: 40%;
+    position: relative;
+    font-family: a;
+}
+.left9>h1{
+    position: absolute;
+    top: 40%;
+    right: 5%;
+    transform: translateY(-50%);
+    font-size: 5vw;
+    font-weight: 100;
+    color: #fff;
+    line-height: 1;
+}
+.right9{
+    height: 100%;
+    width: 60%;
+    position: relative;
+}
+.right9-center{
+    height: 50%;
+    width: 85%;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-image: url(https://thisismagma.com/wp-content/uploads/2023/04/magma.wp2.cubdev.com-home-1.jpeg);
+    background-size: cover;
+    left: 5%;
+}
+#page10{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #0a3cce;
+}
+.right10{
+    height: 100%;
+    width: 60%;
+    position: relative;
+    left: 40%;
+}
+.right10-inner{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    height: 33.3%;
+    width: 100%;
+    font-family: a;
+    color: #fff;
+}
+.right10-inner>h1{
+    font-size: 2vw;
+}
+.right10-inner>p{
+    margin-top: 2vw;
+    font-size: 1.3vw;
+    width: 80%;
+}
+
+#page11{
+    position: relative;
+    height: 110vh;
+    width: 100vw;
+    background-color: #fff;
+    font-family: a;
+}
+#page11>h1{
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    font-size: 4vw;
+    color: #000;
+    font-weight: 100;
+}
+.page11-inner{
+    display: flex;
+    top: 18%;
+    position: relative;
+    margin-bottom: 2vw;
+    height: 24%;
+    width: 100%;
+}
+.left11{
+    position: relative;
+    height: 100%;
+    width: 40%;
+    left: 5%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.left11>img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.right11{
+    padding-top: 5vw;
+    color: #000;
+    left: 50%;
+    position: absolute;
+    height: 100%;
+    width: 50%;
+}
+.right11>h4{
+    font-weight: 100;
+}
+.right11>h1{
+    font-size: 2vw;
+}
+
+
+#page12{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: blue;
+}
+.page12-inner{
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    color: #fff;
+    font-family: a;
+}
+.page12-inner>h1{
+    font-size: 5vw;
+    font-weight: 100;
+}
+.page12-inner>p{
+    font-size: 1.3vw;
+}
+
+
+#page13{
+    position: relative;
+    height: 50vh;
+    width: 100vw;
+    background-color: #000;
+    color: #fff;
+    font-family: a;
+    padding: 7vw 10vw;
+}
+#page13>h1{
+    font-size: 5vw;
+    line-height: 1;
+    font-weight: 100;
+}
+#page13>button{
+    padding: 18px 30px;
+    border: none;
+    background-color: rgb(31, 245, 31);
+    color: #fff;
+    border-radius: 50px;
+    margin-top: 2vw;
+}
+
+
+#page14{
+    position: relative;
+    height: 60vh;
+    width: 100vw;
+    background-color: #000;
+}
+.page14-inner{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0vw 5vw;
+    font-family: a;
+    height: 33.3%;
+    width: 100%;
+    color: #fff;
+    border-top: .5px solid #ffffff5c;
+    border-bottom: .5px solid #ffffff48;
+}
+.page14-inner>i{
+    font-weight: 100;
+    font-size: 2.4vw;
+    position: relative;
+    z-index: 9999;
+}
+.page14-inner>h1{
+    font-size: 3vw;
+    font-weight: 100;
+    position: relative;
+    z-index: 9999;
+}
+
+.center14{
+    height: 0%;
+    width: 100%;
+    background-color: rgb(32, 221, 32);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    transition: all ease .5s;
+}
+
+
+.page14-inner:hover .center14{
+    height: 100%;
+}
+</style>
+</head>
+<body>
+    <div id="main">
+        <div data-scroll data-scroll-speed="-5" id="page1">
+            <nav>
+                <img src="./Screenshot 2023-05-30 220719.png" alt="">
+                <div id="right-nav">
+                    <button>Book a Demo</button>
+                    <button><i class="ri-menu-fill"></i></button>
+                </div>
+            </nav>
+            <div class="bottom-page1">
+                <h1>Experience Real  <br> Estate Agility</h1>
+                <div class="bottom-page1-inner">
+                    <h4>Create a digital twin of your existing building <br> and release the potential of Web3.</h4>
+                    <button>LEARN MORE</button>
+                </div>
+            </div>
+            <video src="https://thisismagma.com/wp-content/themes/magma/assets/home/hero/1.mp4?2" autoplay loop muted ></video>
+        </div>
+        <div id="page2">
+            <h2>CERTIFY YOUR BUILDING AS A DIGITAL TWIN TOKEN (DTT)</h2>
+            <h1>The Digital Twin Token is a unique digital asset backed by property data. Magma combines your building’s components and systems essential information into a DTT.
+            </h1>
+        </div>
+        <div id="page3">
+            <canvas></canvas>
+        </div>
+        <div id="page4">
+            <h3>CONNECT THE BUILDING'S TWIN TO YOUR STAKEHOLDERS</h3>
+            <h1>Users connect directly to the DTT without any intermediaries. As Stakeholder, they have the power to upload and verify information that enriches the Digital Twin Token. A Stakeholder's ability to access validated-data to perform tasks depends on their specific role.</h1>
+        </div>
+        <div id="page5">
+            <canvas></canvas>
+        </div>
+        <div id="page6">
+            <h3>INCREASE YOUR DIGITAL TWIN TOKEN’S VALUE</h3>
+            <h1>DTT data increases the value of your digital asset by lowering operational costs, improving energy use, assisting commercialization, and boosting the liquidity of your building.</h1>
+        </div>
+        <div id="page7">
+            <div class="page7-cir">
+                <div class="page7-cir-inner"></div>
+            </div>
+            <canvas></canvas>
+        </div>
+        <div id="page8">
+            <div class="page8-bottom">
+                <h1>Magma DTT</h1>
+                <button>LEARN MORE</button>
+            </div>
+            <video src="https://thisismagma.com/wp-content/themes/magma/assets/home/glass/1.webm?2"autoplay loop muted></video>
+        </div>
+        <div id="page9">
+            <div class="left9">
+                <h1>What is <br> Magma?</h1>
+            </div>
+            <div class="right9">
+                <div class="right9-center"></div>
+            </div>
+        </div>
+        <div id="page10">
+            <div class="right10">
+                <div class="right10-inner">
+                    <h1>Web3 platform
+                    </h1>
+                    <p>Magma is a Web3 platform for all real estate stakeholders, which provides users with the ability to manage interactions between physical and digital assets through unique, and collectively generated, 3D representations of their buildings.</p>
+                </div>
+                <div class="right10-inner">
+                    <h1>The Digital Twin Token: The building’s unique digital copy</h1>
+                    <p>Magma uses blockchain technology to record essential data, which enables transparent, traceable, and immutable streams of information to be readily accessible to its users. Magma smart contracts are built with this blockchain data to expedite tasks like requests for proposals, lease agreements, and services arrangements.</p>
+                </div>
+                <div class="right10-inner">
+                    <h1>An Index of digitization</h1>
+                    <p>The Magma Index provides valuable insight for decision-making regarding data-sharing, service-creating, and operational/environmental expectations.</p>
+                </div>
+            </div>
+        </div>
+        <div id="page11">
+            <h1>Recent Blog</h1>
+            <div class="page11-inner">
+                <div class="left11">
+                    <img src="https://thisismagma.com/wp-content/uploads/2023/05/thisismagma.com-magma-a-la-3eme-edition-du-tech-talk-de-cbre-france-1684942208038.jpeg" alt="">
+                </div>
+                <div class="right11">
+                    <h4>MAY 30,2023</h4>
+                    <h1>Magma At CBRE France's 3rd Tech Talk</h1>
+
+                </div>
+            </div>
+            <div class="page11-inner">
+                <div class="left11">
+                    <img src="https://thisismagma.com/wp-content/uploads/2023/05/thisismagma.com-workshop-blockchain-et-actif-digitaux-sba-16-min-scaled.jpg" alt="">
+                </div>
+                <div class="right11">
+                    <h4>MAY 30,2023</h4>
+                    <h1>Magma At CBRE France's 3rd Tech Talk</h1>
+
+                </div>
+            </div>
+            <div class="page11-inner">
+                <div class="left11">
+                    <img src="https://thisismagma.com/wp-content/uploads/2023/03/magma.wp2.cubdev.com-exploring-the-potential-of-real-estate-tokenization-digital-twins-magma.png" alt="">
+                </div>
+                <div class="right11">
+                    <h4>MAY 30,2023</h4>
+                    <h1>Magma At CBRE France's 3rd Tech Talk</h1>
+
+                </div>
+            </div>
+          
+        </div>
+        <div id="page12">
+            <div class="page12-inner">
+                <h1>Featured In</h1>
+                <p>Thrilled to have been featured in several prominent media <br> outlets and leading professionals across the world’s best <br> real estate and web3 institutions.</p>
+            </div>
+        </div>
+        <div id="page13">
+            <h1>Become an
+                <br>
+                early adopter</h1>
+                <button>BOOK A DEMO</button>
+        </div>
+        <div id="page14">
+            <div class="page14-inner">
+                <h1>Twitter</h1>
+                <i class="ri-arrow-right-up-line"></i>
+                <div class="center14"></div>
+            </div>
+            <div class="page14-inner">
+                <h1>LinkedIn</h1>
+                <i class="ri-arrow-right-up-line"></i>
+                <div class="center14"></div>
+
+            </div>
+            <div class="page14-inner">
+                <h1>Instagram</h1>
+                <i class="ri-arrow-right-up-line"></i>
+                <div class="center14"></div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js" integrity="sha512-qF6akR/fsZAB4Co1QDDnUXWnaQseLGXoniuSuSlPQK6+aWhlMZcHzkasCSlnWoe+TJuudlka1/IQ01Dnhgq95g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollTrigger.min.js" integrity="sha512-IHDCHrefnBT3vOCsvdkMvJF/MCPz/nBauQLzJkupa4Gn4tYg5a6VGyzIrjo6QAUy3We5HFOZUlkUpP0dkgE60A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+</body>
+</html>
